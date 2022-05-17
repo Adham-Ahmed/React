@@ -16,13 +16,7 @@ export class Slider extends Component {
             'selectedImage': "img1.webp",
             'intervalId': 0
         }
-    };
-    prev= () => {
-        this.setState.index = this.state.index > 0 ? --this.getState.index : this.state.images.length - 1;
-        this.setState({
-          selectedImage: this.state.images[this.state.index]
-        });
-    };
+    }
 
     render() {
 
@@ -31,16 +25,24 @@ export class Slider extends Component {
                 <img width="400px" height="400px" altt="slide show image" id="slideShow" alt="img"
                      src={this.state.selectedImage}/>
                 <div>
-                    <input type={"button"} value="Prev" onClick={(event) => { this.prev() }}/> 
+                    <input type={"button"} value="Prev" onClick={(event) => {
+                      this.setState.index = this.state.index > 0 ? --this.state.index : this.state.images.length - 1;
+                      this.setState({
+                        selectedImage: this.state.images[this.state.index]
+                      });
+                    }}/>
                     <input type={"button"} value="Next" onClick={(event) => {
-                        this.setState.index = this.state.index < this.state.images.length - 1 ? ++this.getState.index : 0;
+                        // this.state.index = this.state.index < this.state.images.length - 1 ? ++this.state.index : 0;
+                        this.setState({
+                            index:this.state.index < this.state.images.length - 1 ? ++this.state.index : 0
+                        }); 
                         this.setState({
                             selectedImage: this.state.images[this.state.index]
                         });
                     }}/>
                     <input type={"button"} value="Play" onClick={(event) => {
                         let id = setInterval(() => {
-                            this.setState.index = this.state.index > 0 ? --this.getState.index : this.state.images.length - 1;
+                            this.state.index = this.state.index > 0 ? --(this.state.index) : this.state.images.length - 1;
                             this.setState({selectedImage: this.state.images[this.state.index]})
                             this.setState({intervalId: id});
                         }, 1000);
