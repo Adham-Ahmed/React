@@ -2,12 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
+
+
 const Slider = () => (
+  
+  const pics=[
+    "logo192.png",
+    // "img1.webp",
+    // "sun-rise.jpg",
+    // "pic.jpg",
+    // "pic2.jpg",
+  ],
  <div className="slider">
     <div>
-    <img src="logo192.png" alt="placeholder"/>
-    <img src="logo192.png" alt="placeholder"/>
-    <img src="logo192.png" alt="placeholder"/>
+   {{
+        // var pics[];
+
+   }}
+    <img src={pics[0]} alt="placeholder" style={{width:"50%"}}/>
   </div>
   
   <div>
